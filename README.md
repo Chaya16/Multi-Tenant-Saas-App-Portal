@@ -13,5 +13,5 @@ Project Description:
 The main idea for the project is to develop a web application which enables the user to locate a nearby Starbucks store and place an order. The user will be able to edit, cancle and even pay for the order. The application must incorporate multi tenancy architechture. Kong API is to be used to to route the request to the appropriate store.
 
 
-# Documentation :
+# Project Notes :
 https://docs.google.com/document/d/1JWyzS0l9U2XknVbifPufO1FUQM4aAitPCMHYCSB9wv4/edit?usp=sharing
