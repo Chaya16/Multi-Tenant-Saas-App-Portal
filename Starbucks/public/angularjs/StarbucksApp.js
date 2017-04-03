@@ -1,24 +1,6 @@
 /**
  * Created by jnirg on 4/2/2017.
  */
-/*
-var Home = angular.module('Home', ['ui.router']);
-
-Home.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $stateProvider.state('Home', {
-        url : '/',
-        views: {
-            'header': {
-                templateUrl : 'templates/header.html',
-            },
-            'content': {
-                templateUrl : 'templates/index.html',
-            },
-        }
-    })
-    $urlRouterProvider.otherwise('/');
-});*/
 
 // create the module and name it scotchApp
 var StarbucksApp = angular.module('StarbucksApp', ['ngRoute']);
@@ -40,8 +22,20 @@ StarbucksApp.config(function($routeProvider) {
         })
 
         // route for the contact page
-        .when('/contact', {
-            templateUrl : 'templates/contact.html',
+        .when('/home', {
+            templateUrl : 'templates/index.html',
+            controller  : 'contactController'
+        })
+
+        // route for the contact page
+        .when('/menu', {
+            templateUrl : 'templates/menu.html',
+            controller  : 'contactController'
+        })
+
+        // route for the contact page
+        .when('/location', {
+            templateUrl : 'templates/locations.html',
             controller  : 'contactController'
         })
 
