@@ -34,7 +34,7 @@ StarbucksApp.config(function($routeProvider) {
         })
 
         // route for the contact page
-        .when('/location', {
+        .when('/locations', {
             templateUrl : 'templates/locations.html',
             controller  : 'contactController'
         })
