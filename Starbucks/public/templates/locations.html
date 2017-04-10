@@ -25,17 +25,36 @@
 	</div>
 	<div id="map"></div>
 	<script>
-        function initMap() {
-            var uluru = {lat: 37.3382, lng: 121.8863};
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: uluru
-            });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
+              function initMap() {
+
+        var myLatLng = {lat: 37.321306, lng: -121.948970};
+	var myLatLng1 = {lat: 37.341387, lng: -121.911713};
+	var myLatLng2 = {lat: 37.325869, lng: -121.943740};	 
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+
+	var marker = new google.maps.Marker({
+          position: myLatLng1,
+          map: map,
+          title: 'Hello World!'
+        });
+
+	var marker = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          title: 'Hello World!'
+        });
+
+      }
 	</script>
 	<script async defer
 			src="https://maps.googleapis.com/maps/api/js?key=API&callback=initMap">
