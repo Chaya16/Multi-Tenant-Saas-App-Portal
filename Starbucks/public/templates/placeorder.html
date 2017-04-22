@@ -1,4 +1,5 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js" />
+<link rel='stylesheet' href='/stylesheets/placeorder.css' />
 <script>
     $(document).ready(function(){
 
@@ -38,46 +39,64 @@
 <div>
     <h1> </h1>
 <div ng-controller="placeorderCtrl">
-    <form name="form1" ng-submit="submitForm()">
+    <form name="form1" ng-submit="submitForm()" class="form-style-9">
+        <ul class="form-style-1">
+            <li>
         <label>
             Drink
-        <input type="text" name="drink" />
+        <input type="text" name="drink" class="field-style field-full align-none"/>
         </label>
+            </li>
+
+            <li>
         <label>
             Size :
-        <select ng-model="size">
+        <select ng-model="size" class="field-select">
             <option>Small</option>
             <option>Medium</option>
             <option>Large</option>
         </select>
         </label>
+            </li>
+
+            <li>
         <label>
             Location :
-        <select ng-model="location">
+        <select ng-model="location" class="field-select"">
                 <option>Starbucks :  Santana Row</option>
                 <option>Starbucks :  San Jose Market Center</option>
                 <option>Starbucks :  Westfield Valley Fair</option>
         </select>
         </label>
+            </li>
+
+            <li>
         <label>
             Quantity :
-        <select ng-model="qty">
+        <select ng-model="qty" class="field-select">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
         </select>
         </label>
+            </li>
+
+            <li>
         <label>
             Drinks :
-        <select ng-model="drink">
+        <select ng-model="drink" class="field-select">
             <option>Capachino</option>
             <option>Mocha</option>
             <option>Latte</option>
             <option>Expresso</option>
         </select>
         </label>
-        <button ng-click = "reset()">Reset</button>
-        <button ng-click = "placeOrder()">Place Order</button>
+            </li>
+
+            <li>
+            <button ng-click = "placeOrder()">Place Order</button>
+            </li>
+        </ul>
     </form>
 </div>
 </div>

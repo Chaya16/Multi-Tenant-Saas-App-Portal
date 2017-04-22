@@ -71,7 +71,7 @@ p a:hover {
 	/*margin: 77px 0 0;*/
 	overflow: hidden;
 	padding: 0;
-	width: 650px;
+	width: 100%;
 }
 #page div div#header ul li {
 	float: left;
