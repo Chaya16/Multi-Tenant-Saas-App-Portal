@@ -66,12 +66,12 @@ p a:hover {
 	margin: 30px 0 0 32px;
 }
 #page div div#header ul {
-	float: right;
+	/*float: right;*/
 	list-style: none;
-	margin: 77px 0 0;
+	/*margin: 77px 0 0;*/
 	overflow: hidden;
 	padding: 0;
-	width: 550px;
+	width: 650px;
 }
 #page div div#header ul li {
 	float: left;
@@ -213,9 +213,9 @@ p a:hover {
 	overflow: hidden;
 	padding: 0;
 }
-#page div div#body div a.about,
-#page div div#body div a.locations,
-#page div div#body div a.whatshot,
+#page div div#body div a.home,
+#page div div#body div a.Menu,
+#page div div#body div a.Locations,
 #page div div#body div a.blog {
 	display: block;
 	float: left;

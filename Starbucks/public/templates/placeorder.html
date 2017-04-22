@@ -1,0 +1,83 @@
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js" />
+<script>
+    $(document).ready(function(){
+
+        var quantitiy=0;
+        $('.quantity-right-plus').click(function(e){
+
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+
+            // If is not undefined
+
+            $('#quantity').val(quantity + 1);
+
+
+            // Increment
+
+        });
+
+        $('.quantity-left-minus').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+
+            // If is not undefined
+
+            // Increment
+            if(quantity>0){
+                $('#quantity').val(quantity - 1);
+            }
+        });
+
+    });
+</script>
+<div>
+    <h1> </h1>
+<div ng-controller="placeorderCtrl">
+    <form name="form1" ng-submit="submitForm()">
+        <label>
+            Drink
+        <input type="text" name="drink" />
+        </label>
+        <label>
+            Size :
+        <select ng-model="size">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+        </select>
+        </label>
+        <label>
+            Location :
+        <select ng-model="location">
+                <option>Starbucks :  Santana Row</option>
+                <option>Starbucks :  San Jose Market Center</option>
+                <option>Starbucks :  Westfield Valley Fair</option>
+        </select>
+        </label>
+        <label>
+            Quantity :
+        <select ng-model="qty">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+        </select>
+        </label>
+        <label>
+            Drinks :
+        <select ng-model="drink">
+            <option>Capachino</option>
+            <option>Mocha</option>
+            <option>Latte</option>
+            <option>Expresso</option>
+        </select>
+        </label>
+        <button ng-click = "reset()">Reset</button>
+        <button ng-click = "placeOrder()">Place Order</button>
+    </form>
+</div>
+</div>

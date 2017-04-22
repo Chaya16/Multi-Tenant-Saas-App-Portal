@@ -7,6 +7,7 @@ var StarbucksApp = angular.module('StarbucksApp', ['ngRoute']);
 
 // configure our routes
 StarbucksApp.config(function($routeProvider) {
+    console.log("route provider")
     $routeProvider
 
     // route for the home page
@@ -36,6 +37,26 @@ StarbucksApp.config(function($routeProvider) {
         // route for the contact page
         .when('/locations', {
             templateUrl : 'templates/locations.html',
+            controller  : 'contactController'
+        })
+
+        .when('/placeorder', {
+            templateUrl : 'templates/placeorder.html',
+            controller  : 'contactController'
+        })
+
+        .when('/checkstatus', {
+            templateUrl : 'templates/checkstatus.html',
+            controller  : 'contactController'
+        })
+
+        .when('/updateorder', {
+            templateUrl : 'templates/about.html',
+            controller  : 'contactController'
+        })
+
+        .when('/payorder', {
+            templateUrl : 'templates/about.html',
             controller  : 'contactController'
         })
 

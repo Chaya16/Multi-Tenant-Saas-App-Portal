@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detail Page</title>
+
+  <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+  <link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/locations.css' />
+  <link rel='stylesheet' href='/stylesheets/menu.css' />
+  <!-- Loading the AngularJS file from /public/angularJS folder -->
+  <script src="angularjs/StarbucksApp.js"></script>
+</head>
+
+
+
+<div id="menu" >
+	<!-- The navigation menu will get the value of the "active" variable as a class.
+		 The $event.preventDefault() stops the page from jumping when a link is clicked. -->
+
+	<nav class="{{active}}" ng-click="$event.preventDefault()">
+
+		<!-- When a link in the menu is clicked, we set the active variable -->
+		<a href="#home" class="home" ng-click="active='home'">Home</a>
+		<a href="#placeorder" class="placeorder" ng-click="active='placeorder'">Place Order</a>
+		<a href="#checkstatus" class="projects" ng-click="active='projects'">Check Status</a>
+		<a href="#updateorder" class="services" ng-click="active='services'">Update Order</a>
+		<a href="#payorder" class="contact" ng-click="active='contact'">Pay</a>
+	</nav>
+
+	<!-- ng-show will show an element if the value in the quotes is truthful,
+		 while ng-hide does the opposite. Because the active variable is not set
+		 initially, this will cause the first paragraph to be visible. -->
+
+	<p ng-hide="active">Please click a menu item</p>
+
+
+</div>
+<!-- angular templating -->
+      <!-- this is where content will be injected -->
+
+      <p ng-show="active">You chose <b>{{active}}</b></p>
+      <div ng-view></div>
+
+</div>
