@@ -1,6 +1,14 @@
-# Multi Tenant Saas Application
+# Multi Cloud Saas Application
 
+3 tenants :
 
+Tenant1 : NodeJS + Mongo
+Tenant2 : Python + Mongo
+Tenant3 : Go + Mongo
+
+Kong API : Rounter
+
+UI : Angular JS
 
 
 ## Team Members

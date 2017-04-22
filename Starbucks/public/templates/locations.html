@@ -23,38 +23,40 @@
 			Closing soon: 10:00 PM
 		</b></p>
 	</div>
-<!--	<div id="map" style='height:400px;width:520px;'></div>
+<div id="map"></div>
 	<script>
-        function initMap() {
-            /*var san_jose = new google.maps.LatLng(37.3382,-121.8863);//,{lat: 37.3382, lng: 121.8863};
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: san_jose
-            });
+      
+function initMap() {
 
-        }
-*/
+        var myLatLng = {lat: 37.321306, lng: -121.948970};
+	var myLatLng1 = {lat: 37.341387, lng: -121.911713};
+	var myLatLng2 = {lat: 37.325869, lng: -121.943740};	 
 
-        var myOptions =
-            {zoom:12,
-                center:new google.maps.LatLng(37.18975980400773,-121.70529999999997),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-        map = new google.maps.Map(document.getElementById('map'), myOptions);
-        marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(37.18975980400773,-121.70529999999997)});
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
 
-        infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br>95192 San Jose<br>'});
-        google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});
-        infowindow.open(map,marker);
-        }
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
 
-	</script>-->
-	<div style='overflow:hidden;height:400px;width:520px;'>
-		<div id='gmap_canvas' style='height:400px;width:520px;'></div>
-		<style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
-	<script type='text/javascript'>function init_map(){
-	    var myOptions = {zoom:12,center:new google.maps.LatLng(37.18975980400773,-121.70529999999997),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(37.18975980400773,-121.70529999999997)});infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br>95192 San Jose<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+	var marker = new google.maps.Marker({
+          position: myLatLng1,
+          map: map,
+          title: 'Hello World!'
+        });
 
+	var marker = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          title: 'Hello World!'
+        });
+
+      }
+	</script>
 	<script async defer
 			src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyADkXIFtiBnx_G3dFpJoGIx48g9C94bZfQ&callback=initMap">
 	</script>
