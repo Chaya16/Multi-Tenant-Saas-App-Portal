@@ -84,7 +84,7 @@ p a:hover {
 	font-size: 16px;
 	text-decoration: none;
 }
-#page div div#header ul li.current a,
+
 #page div div#header ul li a:hover {
 	border-bottom: 5px solid #a2b83c;
 }
