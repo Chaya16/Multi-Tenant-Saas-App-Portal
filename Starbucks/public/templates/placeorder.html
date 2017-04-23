@@ -41,13 +41,17 @@
 <div ng-controller="placeorderCtrl">
     <form name="form1" ng-submit="submitForm()" class="form-style-9">
         <ul class="form-style-1">
-            <li>
+         <li>
         <label>
-            Drink
-        <input type="text" name="drink" class="field-style field-full align-none"/>
+            Drinks :
+        <select ng-model="drink" class="field-select">
+            <option>Capachino</option>
+            <option>Mocha</option>
+            <option>Latte</option>
+            <option>Expresso</option>
+        </select>
         </label>
             </li>
-
             <li>
         <label>
             Size :
@@ -81,17 +85,7 @@
         </label>
             </li>
 
-            <li>
-        <label>
-            Drinks :
-        <select ng-model="drink" class="field-select">
-            <option>Capachino</option>
-            <option>Mocha</option>
-            <option>Latte</option>
-            <option>Expresso</option>
-        </select>
-        </label>
-            </li>
+           
 
             <li>
             <button ng-click = "placeOrder()">Place Order</button>
