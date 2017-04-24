@@ -56,7 +56,7 @@ StarbucksApp.config(function($routeProvider) {
         })
 
         .when('/payorder', {
-            templateUrl : 'templates/about.html',
+            templateUrl : 'templates/payorder.html',
             controller  : 'contactController'
         })
 
