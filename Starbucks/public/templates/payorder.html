@@ -1,0 +1,61 @@
+<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js" />
+<link rel='stylesheet' href='/stylesheets/placeorder.css' />
+<!--script>
+function coffeePrice()
+{
+var drink_prices= new Array();
+drink_prices["Cappucino"]=3.25;
+drink_prices["Mocha"]=3.75;
+drink_prices["Latte"]=3.25;
+drink_prices["Espresso"]=2;
+
+var drink_size= new Array();
+drink_size["Small"]=0;
+drink_size["Medium"]=0.50;
+drink_size["Large"]=1.00
+
+var milk= new Array();
+milk["Whole"]=0;
+milk["2%"]=0;
+milk["Almond"]=0.60;
+
+var qty= new Array();
+qty["1"]=1;
+qty["2"]=2;
+qty["3"]=3;
+
+//Get a reference to the form id="cakeform"
+var theForm = document.forms["placeorder"];
+//Get a reference to the checkbox id="includecandles"
+var drink = theForm.elements["drink"];
+var size = theForm.elements["size"];
+var milk = theForm.elements["milk"];
+var qty = theForm.elements["qty"];
+//coffeePrice = (drink_prices[drink.value] + drink_size[size.value] + milk[milk.value] ) * (qty[qty.value]);
+coffeePrice = drink_prices["Cappucino"] + drink_size["Medium"] + milk["2%"]; 
+document.getElementByName("price").value = coffeePrice;
+}
+
+</script-->
+<div>
+    <h1> </h1>
+<div ng-controller="payorderCtrl">
+    <form name="form1" ng-submit="submitForm()" class="form-style-9">
+        <ul class="form-style-1">
+         <li>
+                <label>Order ID <span class="required">*</span></label>
+                <input type="text" name="orderid" class="field-long" />
+            </li>
+
+                 
+
+            <li>
+            <button ng-click = "coffeePrice()">Pay</button>
+            </li>
+
+            
+            
+        </ul>
+    </form>
+</div>
+</div>

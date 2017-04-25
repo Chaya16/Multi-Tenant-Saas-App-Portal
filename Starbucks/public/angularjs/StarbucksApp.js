@@ -51,7 +51,7 @@ StarbucksApp.config(function($routeProvider) {
 
         .when('/payorder', {
             templateUrl : 'templates/about.html',
-            controller  : 'aboutController'
+            controller  : 'contactController'
         })
 
         .otherwise({redirectTo: '/'});
