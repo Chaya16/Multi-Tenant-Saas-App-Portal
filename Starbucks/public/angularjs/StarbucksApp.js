@@ -7,6 +7,8 @@ var StarbucksApp = angular.module('StarbucksApp', ['ngRoute']);
 
 // configure our routes
 StarbucksApp.config(function($routeProvider) {
+
+    var link = ''
     console.log("route provider")
     $routeProvider
 
@@ -65,6 +67,50 @@ StarbucksApp.controller('mainController', function($scope) {
 
 StarbucksApp.controller('aboutController', function($scope) {
     $scope.message = 'Look! I am an about page.';
+});
+
+
+angular.module('StarbucksApp').controller("placeorderController", function ($scope, $http, $route, $rootScope,
+                                                                  $interval) {
+    $scope.message = 'Placing an order';
+    console.log("Heyo!!!!");
+
+    $scope.placeOrder = function () {
+
+        console.log("in the place order function");
+
+        console.log("placeorder called");
+
+        console.log("inside placeordeCtrl");
+        var order = {
+            "location": "store-1",
+            "items": [{
+                "qty": $scope.qty,
+                "name": $scope.drink,
+                "milk": $scope.milk,
+                "size": $scope.size
+            }]
+        }
+
+
+
+        console.log(order);
+
+        $http({
+            method: 'POST',
+            url: 'http://54.183.83.252:8000/Starbucks1/v1/starbucks/order',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded','Host':'Starbucks1.com','Access-Control-Allow-Credentials': true},
+            data: order
+
+        }).success(function (data) {
+            $scope.msg = "Order placed";
+            //message should be displayed that your order has been placed
+            //manage this flag in UI
+            $scope.msg_flag = false;
+            $route.reload();
+        });
+
+    }
 });
 
 
