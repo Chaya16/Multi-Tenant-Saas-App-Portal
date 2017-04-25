@@ -1,46 +1,14 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js" />
 <link rel='stylesheet' href='/stylesheets/placeorder.css' />
-<script>
-    $(document).ready(function(){
 
-        var quantitiy=0;
-        $('.quantity-right-plus').click(function(e){
-
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-
-            // If is not undefined
-
-            $('#quantity').val(quantity + 1);
-
-
-            // Increment
-
-        });
-
-        $('.quantity-left-minus').click(function(e){
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-
-            // If is not undefined
-
-            // Increment
-            if(quantity>0){
-                $('#quantity').val(quantity - 1);
-            }
-        });
-
-    });
-</script>
 <div>
     <h1> </h1>
-<div ng-controller="placeorderCtrl">
-    <form name="form1" ng-submit="submitForm()" class="form-style-9">
+<div  ng-controller="placeorderController">
+    <form name="form1" class="form-style-9">
         <ul class="form-style-1">
+            <li>
+                <label ng-model="msg"></label>
+            </li>
          <li>
         <label>
             Drinks :
@@ -96,7 +64,6 @@
         </label>
             </li>
 
-           
 
             <li>
             <button ng-click = "placeOrder()">Place Order</button>

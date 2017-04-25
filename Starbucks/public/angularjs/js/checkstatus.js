@@ -1,3 +1,4 @@
+/*
 $('#contact-form').bootstrapValidator({
 //        live: 'disabled',
     message: 'This value is not valid',
@@ -32,4 +33,4 @@ $('#contact-form').bootstrapValidator({
             }
         }
     }
-});
+});*/

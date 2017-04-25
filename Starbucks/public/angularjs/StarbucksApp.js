@@ -25,44 +25,33 @@ StarbucksApp.config(function($routeProvider) {
         // route for the contact page
         .when('/home', {
             templateUrl : 'templates/index.html',
-            controller  : 'contactController'
+            controller  : 'mainController'
         })
 
-        // route for the contact page
-        .when('/menu', {
-            templateUrl : 'templates/menu.html',
-            controller  : 'contactController'
-        })
-
-        // route for the contact page
-        .when('/locations', {
-            templateUrl : 'templates/locations.html',
-            controller  : 'contactController'
-        })
 
         .when('/placeorder', {
             templateUrl : 'templates/placeorder.html',
-            controller  : 'contactController'
+            controller  : 'placeorderController'
         })
 
         .when('/checkstatus', {
             templateUrl : 'templates/checkstatus.html',
-            controller  : 'contactController'
+            controller  : 'mainController'
         })
 
         .when('/updateorder', {
             templateUrl : 'templates/updateorder.html',
-            controller  : 'contactController'
+            controller  : 'mainController'
         })
 
         .when('/cancelorder', {
             templateUrl : 'templates/cancelorder.html',
-            controller  : 'contactController'
+            controller  : 'mainController'
         })
 
         .when('/payorder', {
             templateUrl : 'templates/about.html',
-            controller  : 'contactController'
+            controller  : 'aboutController'
         })
 
         .otherwise({redirectTo: '/'});
@@ -78,6 +67,6 @@ StarbucksApp.controller('aboutController', function($scope) {
     $scope.message = 'Look! I am an about page.';
 });
 
-StarbucksApp.controller('contactController', function($scope) {
-    $scope.message = 'Contact us! JK. This is just a demo.';
-});
+
+
+

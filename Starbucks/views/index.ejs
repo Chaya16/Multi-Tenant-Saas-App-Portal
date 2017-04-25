@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
+
+
 <head>
-  <title>Detail Page</title>
+  <title>Starbucks</title>
 
   <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 
   <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
@@ -15,13 +18,19 @@
   <link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
+
   <link rel='stylesheet' href='/stylesheets/locations.css' />
   <link rel='stylesheet' href='/stylesheets/menu.css' />
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   <!-- Loading the AngularJS file from /public/angularJS folder -->
   <script src="angularjs/StarbucksApp.js"></script>
+  <script src="angularjs/placeorder.js"></script>
+
 </head>
 
+
+
+<body >
 <div id="page"  ng-app="StarbucksApp">
 <div>
   <div id="header">
@@ -37,10 +46,10 @@
         <a href="#checkstatus">Check Status</a>
       </li>
        <li>
-              <a href="#updateorder">Update Order</a>
+         <a href="#updateorder">Update Order</a>
       </li>
        <li>
-              <a href="#cancelorder">Cancel Order</a>
+         <a href="#cancelorder">Cancel Order</a>
        </li>
       <li>
         <a href="#about">About Us</a>
@@ -53,4 +62,5 @@
   <div ng-view></div>
 
  </div>
+</body>
 </html>
