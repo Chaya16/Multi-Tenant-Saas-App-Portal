@@ -1,7 +1,14 @@
 var StarbucksApp = angular.module('StarbucksApp', []);
-StarbucksApp.controller('placeorderController', function($scope, $http) {
+StarbucksApp.controller('placeorderController', function($scope) {
     // create a message to display in our view
-   /* console.log("placeorderController");
+    console.log("place controller");
+});
+
+/*
+StarbucksApp.controller('placeorderController', function($scope, $http) {
+    console.log("place controller");
+    // create a message to display in our view
+   console.log("placeorderController");
      var store = $scope.location;
      console.log(store);
 
@@ -20,11 +27,11 @@ StarbucksApp.controller('placeorderController', function($scope, $http) {
          }
      };
 
-     console.log(order);*/
+     console.log(order);
 
     $scope.placeorder = function()
     {
         console.log("placeorderController");
     }
 
-});
+});*/
