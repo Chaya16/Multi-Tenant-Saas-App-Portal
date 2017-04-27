@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d8f1b9-eae5-4308-9234-c416a6571c3b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angularjs/checkstatus.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/templates/orderList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularjs/StarbucksApp.js" afterPath="$PROJECT_DIR$/public/angularjs/StarbucksApp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angularjs/placeorder.js" afterPath="$PROJECT_DIR$/public/angularjs/placeorder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/cancelorder.html" afterPath="$PROJECT_DIR$/public/templates/cancelorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/checkstatus.html" afterPath="$PROJECT_DIR$/public/templates/checkstatus.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/payorder.html" afterPath="$PROJECT_DIR$/public/templates/payorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/placeorder.html" afterPath="$PROJECT_DIR$/public/templates/placeorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/updateorder.html" afterPath="$PROJECT_DIR$/public/templates/updateorder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/angularjs/checkstatus.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/angularjs/placeorder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/templates/menu.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +22,8 @@
       <file leaf-file-name="StarbucksApp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/angularjs/StarbucksApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="279" column="28" lean-forward="true" selection-start-line="279" selection-start-column="28" selection-end-line="279" selection-end-column="28" />
+            <state relative-caret-position="584">
+              <caret line="275" column="18" lean-forward="false" selection-start-line="275" selection-start-column="18" selection-end-line="275" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -88,16 +79,6 @@
               <folding>
                 <element signature="n#style#0;n#button#0;n#li#6;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="placeorder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/angularjs/placeorder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="63" lean-forward="false" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="63" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -810,7 +791,7 @@
       <workItem from="1492899510538" duration="21000" />
       <workItem from="1493056632800" duration="9616000" />
       <workItem from="1493095508627" duration="9198000" />
-      <workItem from="1493268397007" duration="7876000" />
+      <workItem from="1493268397007" duration="8014000" />
     </task>
     <task id="LOCAL-00001" summary="added css for lcoations">
       <created>1491713131366</created>
@@ -844,11 +825,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65354000" />
+    <option name="totallyTimeSpent" value="65492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -859,14 +839,15 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30735457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30735457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -879,7 +860,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1259,8 +1239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/angularjs/StarbucksApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="279" column="28" lean-forward="true" selection-start-line="279" selection-start-column="28" selection-end-line="279" selection-end-column="28" />
+        <state relative-caret-position="584">
+          <caret line="275" column="18" lean-forward="false" selection-start-line="275" selection-start-column="18" selection-end-line="275" selection-end-column="18" />
           <folding />
         </state>
       </provider>
