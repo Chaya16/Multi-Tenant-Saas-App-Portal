@@ -5,15 +5,15 @@
         <ul class="form-style-1">
             <li>
                 <label>Order ID <span class="required">*</span></label>
-                <input type="text" name="orderid" class="field-long" />
+                <input type="text" ng-model="orderid" class="field-long" />
             </li>
             <li>
                 <label>Your order status <span class="required">*</span></label>
-                <input type="text" readonly="readonly" name="orderstatus" class="field-long" />
+                <input type="text" readonly="readonly" ng-model="orderstatus" class="field-long" />
             </li>
             
             <li>
-                <button ng-click = "cancelOrder()">Cancel Order</button>
+                <button ng-disabled="isCancelDisabled" ng-click = "cancelOrder()">Cancel Order</button>
             </li>
         </ul>
     </form>

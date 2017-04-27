@@ -3,7 +3,7 @@
 
 <div>
     <h1> </h1>
-<div  ng-controller="placeorderController">
+<div>
     <form name="form1" class="form-style-9">
         <ul class="form-style-1">
             <li>
@@ -66,7 +66,11 @@
 
 
             <li>
-            <button ng-click = "placeOrder()">Place Order</button>
+            <button style="width: 30%" ng-click = "placeOrder()">Place Order</button>
+            </li>
+
+            <li>
+                <label ng-model="msg"></label>
             </li>
         </ul>
     </form>

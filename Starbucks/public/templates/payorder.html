@@ -39,7 +39,7 @@ document.getElementByName("price").value = coffeePrice;
 </script-->
 <div>
     <h1> </h1>
-<div ng-controller="payorderCtrl">
+<div>
     <form name="form1" ng-submit="submitForm()" class="form-style-9">
         <ul class="form-style-1">
          <li>
@@ -50,9 +50,12 @@ document.getElementByName("price").value = coffeePrice;
                  
 
             <li>
-            <button ng-click = "coffeePrice()">Pay</button>
+            <button style="width: 30%"  ng-click = "coffeePrice()">Pay</button>
             </li>
 
+            <li>
+                <label ng-model="msg"></label>
+            </li>
             
             
         </ul>

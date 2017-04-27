@@ -1,8 +1,7 @@
-var StarbucksApp = angular.module('StarbucksApp', []);
-StarbucksApp.controller('placeorderController', function($scope) {
-    // create a message to display in our view
-    console.log("place controller");
-});
+var StarbucksApp = angular.module('StarbucksApp', ['ngRoute']);
+StarbucksApp.controller('placeorderController', ['$scope', function($scope) {
+    console.log("placeorder controller");
+}]);
 
 /*
 StarbucksApp.controller('placeorderController', function($scope, $http) {

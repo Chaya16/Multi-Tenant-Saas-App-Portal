@@ -1,0 +1,20 @@
+<div><h1>
+
+    <table ng-table="vm.tableParams" class="table" show-filter="true">
+        <tr ng-repeat="order in $data">
+            <td title="'Status'" filter="{ name: 'text'}" sortable="'data.status'">
+                {{data.status}}</td>
+            <td title="'Location'" filter="{ name: 'text'}" sortable="'data.location'">
+                {{data.location}}</td>
+            <td title="'Drink'" filter="{ name: 'text'}" sortable="'data.items.drink'">
+                {{data.items.drink}}</td>
+            <td title="'Milk'" filter="{ name: 'text'}" sortable="'data.items.milk'">
+                {{data.items.milk}}</td>
+            <td title="'Size'" filter="{ name: 'text'}" sortable="'data.items.size'">
+                {{data.items.size}}</td>
+            <td title="'Quatity'" filter="{ qty: 'number'}" sortable="'data.items.qty'">
+                {{data.qty}}</td>
+        </tr>
+    </table>
+
+</h1></div>
