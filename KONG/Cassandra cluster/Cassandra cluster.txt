@@ -1,0 +1,1 @@
+//Following are the steps to create a cassandra cluster
