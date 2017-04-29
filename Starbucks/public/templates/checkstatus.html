@@ -6,7 +6,7 @@
             <li>
                 <label>
                     Location :
-                    <select ng-model="location" class="field-select"">
+                    <select ng-model="location" required=true class="field-select"">
                     <option>Starbucks :  Santana Row</option>
                     <option>Starbucks :  San Jose Market Center</option>
                     <option>Starbucks :  Westfield Valley Fair</option>
@@ -15,7 +15,7 @@
             </li>
             <li>
                 <label>Order ID <span class="required">*</span></label>
-                <input type="text" name="orderid" class="field-long" ng-model="orderId" />
+                <input required=true type="text" name="orderid" class="field-long" ng-model="orderId" />
             </li>
             <li>
                 <label>Your order status <span class="required">*</span></label>

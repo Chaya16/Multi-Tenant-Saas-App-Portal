@@ -107,7 +107,7 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
 
         $http({
             method: 'POST',
-            url: link + '/store1/starbucks/order',
+            url: 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order',//link + '/store1/starbucks/order',
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             data: order
 
@@ -137,19 +137,23 @@ StarbucksApp.controller("checkstatusController", function ($scope, $http, $route
 
     $scope.checkStatus = function () {
 
-        var urlLink = link + '/store1/starbucks/order/' +$scope.orderId;
+        var urlLink = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        //link + '/store1/starbucks/order/' +$scope.orderId;
 
         $http({
             method: 'GET',
             url: urlLink,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
+            console.log(data);
             $scope.status = data.status;
             $scope.msg = data.message;
-            $route.reload();
+            //$route.reload();
         }).error(function(error, status) {
+            console.log(error);
             $scope.msg = error.message;
             //$scope.msg_flag = true;
-            $route.reload();
+           // $route.reload();
         });
 
 
@@ -165,19 +169,24 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
     console.log('update order controller with isUpdateAllowed false');
     $scope.isUpdateDisabled = true;
 
-    console.log($scope.orderid);
+    console.log($scope.orderId);
 
 
     $scope.getOrder = function () {
 
-        var urlLink = link + '/store1/starbucks/order/' + $scope.orderid;
+        var urlLink = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        //link + '/store1/starbucks/order/' + $scope.orderid;
 
         $http({
             method: 'GET',
             url: urlLink,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
+            console.log(data);
+           // var newDataJSON = JSON.parse(data)
+           // console.log(newDataJSON);
             $scope.orderstatus = data.status;
-            $scope.drink = data.items.drink;
+            $scope.drink = data.items.name;
             $scope.size = data.items.size;
             $scope.milk = data.items.milk;
             $scope.qty = data.items.qty;
@@ -187,18 +196,19 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
             {
                 $scope.isUpdateDisabled = false;
             }
-            $route.reload();
+            //$route.reload();
         }).error(function (error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
-            $route.reload();
+            //$route.reload();
         });
     }
 
 
 
     $scope.updateOrder = function(){
-        var urlLink = link + '/store1/starbucks/order/' + $scope.orderid;
+        var urlLink = 'http://localhost:5000/v1/starbucks/store2/order/'+$scope.orderId;
+            //link + '/store1/starbucks/order/' + $scope.orderid;
         var order = {
             "location": $scope.location,
             "items": [{
@@ -219,14 +229,15 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
         }).success(function (data) {
             $scope.msg = "Order updated";
+            console.log(data);
             //message should be displayed that your order has been placed
             //manage this flag in UI
 
-            $route.reload();
+            //$route.reload();
         }).error(function(error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
-            $route.reload();
+            //$route.reload();
         });
 
     }
@@ -240,25 +251,29 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
                                                            $interval) {
 
     console.log('cancel order controller');
-    console.log($scope.orderid);
+    console.log($scope.orderId);
 
 
-    $scope.getOrder = function () {
+    $scope.cancelOrder = function () {
 
-        var urlLink = link + '/store1/starbucks/order/' + $scope.orderid;
+        var urlLink ='http://localhost:5000/v1/starbucks/store2/order/'+$scope.orderId;
+            //link + '/store1/starbucks/order/' + $scope.orderid;
 
         $http({
-            method: 'GET',
-            url: urlLink,
+
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            method: 'DELETE',
+            url: urlLink
         }).success(function (data) {
+            console.log("delete completed")
             $scope.orderstatus = data.status;
             $scope.msg = data.message;
-
-            $route.reload();
+            console.log(data);
+           // setTimeout($route.reload(), 1000);
         }).error(function (error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
-            $route.reload();
+            //$route.reload();
         });
     }
 
@@ -271,18 +286,20 @@ StarbucksApp.controller("payorderController", function ($scope, $http, $route, $
 
     console.log('pay order controller');
 
-    $scope.getOrder = function () {
+    $scope.payOrder = function () {
 
-        var urlLink = link + '/store1/starbucks/order/' + $scope.orderid + '/pay';
+        var urlLink ='http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId +"/pay";
+            //link + '/store1/starbucks/order/' + $scope.orderid + '/pay';
 
         $http({
             method: 'POST',
             url: urlLink
         }).success(function (data) {
+            console.log(data);
             $scope.orderstatus = data.status;
             $scope.msg = data.message;
 
-            $route.reload();
+            setTimeout($route.reload(), 2000);
         }).error(function (error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
