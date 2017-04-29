@@ -22,7 +22,12 @@ The main idea for the project is to develop a web application which enables the 
 
 
 ## Project Notes :
-https://docs.google.com/document/d/1JWyzS0l9U2XknVbifPufO1FUQM4aAitPCMHYCSB9wv4/edit?usp=sharing
+
+<br>Project Work :
+https://docs.google.com/document/d/1JWyzS0l9U2XknVbifPufO1FUQM4aAitPCMHYCSB9wv4/edit?usp=sharing</br>
+
+<br> Project Report:
+https://docs.google.com/document/d/1Zhh9rEiiRg-TFjI5KT31HAFoDftJLTnizKScawu11-8/edit</br>
 
 
 ## Backend URL's
