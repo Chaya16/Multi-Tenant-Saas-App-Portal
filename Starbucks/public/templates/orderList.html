@@ -1,5 +1,25 @@
 <div><h1>
+    <div>
+        <form name="form1" class="form-style-9">
+            <ul class="form-style-1">
+                <li>
+                    <label>
+                        Location :
+                        <select ng-model="location" class="field-select"">
+                        <option>Starbucks :  Santana Row</option>
+                        <option>Starbucks :  San Jose Market Center</option>
+                        <option>Starbucks :  Westfield Valley Fair</option>
+                        </select>
+                    </label>
+                </li>
+                <li>
+                    <button ng-click="getOrders()">Get All Orders</button>
+                </li>
+            </ul>
+        </form>
+    </div>
 
+    <div></div>
     <table ng-table="vm.tableParams" class="table" show-filter="true">
         <tr ng-repeat="order in $data">
             <td title="'Status'" filter="{ name: 'text'}" sortable="'data.status'">

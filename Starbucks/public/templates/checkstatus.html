@@ -4,6 +4,16 @@
     <form>
         <ul class="form-style-1">
             <li>
+                <label>
+                    Location :
+                    <select ng-model="location" class="field-select"">
+                    <option>Starbucks :  Santana Row</option>
+                    <option>Starbucks :  San Jose Market Center</option>
+                    <option>Starbucks :  Westfield Valley Fair</option>
+                    </select>
+                </label>
+            </li>
+            <li>
                 <label>Order ID <span class="required">*</span></label>
                 <input type="text" name="orderid" class="field-long" ng-model="orderId" />
             </li>
