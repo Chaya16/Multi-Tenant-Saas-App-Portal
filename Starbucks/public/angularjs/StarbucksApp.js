@@ -112,11 +112,12 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
             data: order
 
         }).success(function (data) {
-            $scope.msg = "Order placed";
+            console.log(data);
+            $scope.msg = "Order placed with order-id :" + data.id;
             //message should be displayed that your order has been placed
             //manage this flag in UI
             $scope.msg_flag = false;
-            $route.reload();
+            //$route.reload();
         }).error(function(error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
@@ -207,7 +208,7 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
 
     $scope.updateOrder = function(){
-        var urlLink = 'http://localhost:5000/v1/starbucks/store2/order/'+$scope.orderId;
+        var urlLink = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
             //link + '/store1/starbucks/order/' + $scope.orderid;
         var order = {
             "location": $scope.location,
@@ -228,7 +229,7 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
             data: order
 
         }).success(function (data) {
-            $scope.msg = "Order updated";
+            $scope.msg = data.message;
             console.log(data);
             //message should be displayed that your order has been placed
             //manage this flag in UI
@@ -299,11 +300,11 @@ StarbucksApp.controller("payorderController", function ($scope, $http, $route, $
             $scope.orderstatus = data.status;
             $scope.msg = data.message;
 
-            setTimeout($route.reload(), 2000);
+            //setTimeout($route.reload(), 2000);
         }).error(function (error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
-            $route.reload();
+           // $route.reload();
         });
     }
 
