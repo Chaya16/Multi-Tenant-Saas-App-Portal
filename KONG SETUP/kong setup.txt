@@ -1,0 +1,1 @@
+// Following are the steps to install and start kong on EC2 instance
