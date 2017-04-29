@@ -4,6 +4,9 @@
     <form>
         <ul class="form-style-1">
             <li>
+                <label ng-model="msg"> <span class="required"></span>{{msg}}</label>
+            </li>
+            <li>
                 <label>
                     Location :
                     <select ng-model="location" class="field-select"">
@@ -73,9 +76,6 @@
                 <button style="width: 30%"  ng-click = "updateOrder()" title="Order update">Update Order</button>
             </li>
 
-            <li>
-                <label ng-model="msg"></label>
-            </li>
         </ul>
     </form>
 </div>

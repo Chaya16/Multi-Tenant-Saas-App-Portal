@@ -6,6 +6,9 @@
     <form name="form1" ng-submit="submitForm()" class="form-style-9">
         <ul class="form-style-1">
             <li>
+                <label ng-model="msg"> <span class="required"></span>{{msg}}</label>
+            </li>
+            <li>
                 <label>
                     Location :
                     <select ng-model="location" class="field-select"">

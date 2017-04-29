@@ -4,9 +4,12 @@
     <form>
         <ul class="form-style-1">
             <li>
+                     <label ng-model="msg"> <span class="required"></span>{{msg}}</label>
+            </li>
+            <li>
                 <label>
                     Location :
-                    <select ng-model="location" required=true class="field-select"">
+                    <select ng-model="location" required=true class="field-select">
                     <option>Starbucks :  Santana Row</option>
                     <option>Starbucks :  San Jose Market Center</option>
                     <option>Starbucks :  Westfield Valley Fair</option>
@@ -25,9 +28,7 @@
             <li>
                 <button style="width: 30%"  ng-click = "checkStatus()">Check Status</button>
             </li>
-            <li>
-                <label ng-model="msg"></label>
-            </li>
+
         </ul>
     </form>
 </div>

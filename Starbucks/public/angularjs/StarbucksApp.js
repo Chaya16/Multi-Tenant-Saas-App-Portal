@@ -256,7 +256,7 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
 
     $scope.cancelOrder = function () {
 
-        var urlLink ='http://localhost:5000/v1/starbucks/store2/order/'+$scope.orderId;
+        var urlLink ='http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
             //link + '/store1/starbucks/order/' + $scope.orderid;
 
         $http({
