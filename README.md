@@ -2,9 +2,9 @@
 
 ## Tenants :
 
-Tenant1 : NodeJS + Mongo
-Tenant2 : Python + Mongo
-Tenant3 : Go + Mongo
+<br>Tenant1 : NodeJS + Mongo</br>
+<br>Tenant2 : Python + Mongo</br>
+<br>Tenant3 : Go + Mongo</br>
 
 Kong API : Rounter
 
