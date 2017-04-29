@@ -1,3 +1,6 @@
+<link rel='stylesheet' href='/stylesheets/placeorder.css' />
+<link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
 <div><h1>
     <div>
         <form name="form1" class="form-style-9">
@@ -18,23 +21,59 @@
             </ul>
         </form>
     </div>
+    <table st-table="rowCollection" class="table table-striped">
+        <thead>
+        <tr>
+            <th st-sort="firstName">first name</th>
+            <th st-sort="lastName">last name</th>
+            <th st-sort="birthDate">birth date</th>
+            <th st-sort="balance">balance</th>
+            <th>email</th>
+        </tr>
+        <tr>
+            <th>
+                <input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+            </th>
+            <th colspan="4">
+                <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rowCollection">
+            <td>{{row.firstName | uppercase}}</td>
+            <td>{{row.lastName}}</td>
+            <td>{{row.birthDate | date}}</td>
+            <td>{{row.balance | currency}}</td>
+            <td><a ng-href="mailto:{{row.email}}">email</a></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
 
-    <div></div>
-    <table ng-table="vm.tableParams" class="table" show-filter="true">
-        <tr ng-repeat="order in $data">
-            <td title="'Status'" filter="{ name: 'text'}" sortable="'data.status'">
+    <!--<div>
+    <table ng-table="vm.tableParams" class="table" >
+        <tr ng-repeat="data in $orders">
+            <td title="'Status'"  sortable="'data.status'">
                 {{data.status}}</td>
-            <td title="'Location'" filter="{ name: 'text'}" sortable="'data.location'">
+            <td title="'Location'" sortable="'data.location'">
                 {{data.location}}</td>
-            <td title="'Drink'" filter="{ name: 'text'}" sortable="'data.items.drink'">
+            <td title="'Drink'"  sortable="'data.items.drink'">
                 {{data.items.drink}}</td>
-            <td title="'Milk'" filter="{ name: 'text'}" sortable="'data.items.milk'">
+            <td title="'Milk'"  sortable="'data.items.milk'">
                 {{data.items.milk}}</td>
-            <td title="'Size'" filter="{ name: 'text'}" sortable="'data.items.size'">
+            <td title="'Size'" sortable="'data.items.size'">
                 {{data.items.size}}</td>
-            <td title="'Quatity'" filter="{ qty: 'number'}" sortable="'data.items.qty'">
+            <td title="'Quatity'"  sortable="'data.items.qty'">
                 {{data.qty}}</td>
         </tr>
     </table>
+    </div>-->
 
 </h1></div>

@@ -2,7 +2,7 @@
  * Created by jnirg on 4/2/2017.
  */
 // create the module and name it scotchApp
-var StarbucksApp = angular.module('StarbucksApp', ['ngRoute', 'ngTable']);
+var StarbucksApp = angular.module('StarbucksApp', ['ngRoute', 'ngTable'/*, 'smart-table'*/]);
 
 // configure our routes
 StarbucksApp.config(function($routeProvider) {
@@ -56,6 +56,11 @@ StarbucksApp.config(function($routeProvider) {
             controller  : 'payorderController'
         })
 
+      /*  .when('/listOrders',{
+            templateUrl : 'templates/orderList.html',
+            controller  : 'paginationCtrl'
+        })*/
+
         .otherwise({redirectTo: '/'});
 });
 
@@ -67,6 +72,10 @@ StarbucksApp.controller('mainController', function($scope) {
 
 StarbucksApp.controller('aboutController', function($scope) {
     $scope.message = 'Look! I am an about page.';
+});
+
+StarbucksApp.controller('orderlistController', function($scope) {
+    $scope.message = 'view all orders';
 });
 
 //--------------------------------- place order controller-------------------------------------------
@@ -282,3 +291,34 @@ StarbucksApp.controller("payorderController", function ($scope, $http, $route, $
     }
 
 });
+
+//-------------------- orde rlist----------------
+StarbucksApp.controller('paginationCtrl', ['$scope', function (scope) {
+    var
+        nameList = ['Pierre', 'Pol', 'Jacques', 'Robert', 'Elisa'],
+        familyName = ['Dupont', 'Germain', 'Delcourt', 'bjip', 'Menez'];
+
+    function createRandomItem() {
+        var
+            firstName = nameList[Math.floor(Math.random() * 4)],
+            lastName = familyName[Math.floor(Math.random() * 4)],
+            age = Math.floor(Math.random() * 100),
+            email = firstName + lastName + '@whatever.com',
+            balance = Math.random() * 3000;
+
+        return{
+            firstName: firstName,
+            lastName: lastName,
+            age: age,
+            email: email,
+            balance: balance
+        };
+    }
+
+    scope.itemsByPage=15;
+
+    scope.rowCollection = [];
+    for (var j = 0; j < 200; j++) {
+        scope.rowCollection.push(createRandomItem());
+    }
+}]);
