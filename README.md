@@ -1,6 +1,6 @@
 # Multi Cloud Saas Application
 
-3 tenants :
+## Tenants :
 
 Tenant1 : NodeJS + Mongo
 Tenant2 : Python + Mongo
@@ -21,5 +21,13 @@ Project Description:
 The main idea for the project is to develop a web application which enables the user to locate a nearby Starbucks store and place an order. The user will be able to edit, cancle and even pay for the order. The application must incorporate multi tenancy architechture. Kong API is to be used to to route the request to the appropriate store.
 
 
-# Project Notes :
+## Project Notes :
 https://docs.google.com/document/d/1JWyzS0l9U2XknVbifPufO1FUQM4aAitPCMHYCSB9wv4/edit?usp=sharing
+
+
+## Backend URL's
+
+Python-Flask : https://github.com/amdh/Multi-Tenant-SaaS-App-Backend
+Go: https://github.com/Chaya16/Multi-Tenant-Saas-App-Backend
+NodeJS : https://github.com/arpitadixit/Multi-Tenant-SaaS-App-Backend
+
