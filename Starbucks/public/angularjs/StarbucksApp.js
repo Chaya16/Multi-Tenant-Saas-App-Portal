@@ -109,7 +109,7 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
             method: 'POST',
             url: 'https://shielded-headland-71312.herokuapp.com/starbucks/store1/order',//link + '/store1/starbucks/order',
             headers: {'Content-Type': 'application/json'},
-            JSON.stringify(order)
+            data: JSON.stringify(order)
             //data: order
 
         }).success(function (data) {
