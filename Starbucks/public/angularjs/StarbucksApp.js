@@ -107,9 +107,10 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
 
         $http({
             method: 'POST',
-            url: 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order',//link + '/store1/starbucks/order',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            data: order
+            url: 'https://shielded-headland-71312.herokuapp.com/starbucks/store1/order',//link + '/store1/starbucks/order',
+            headers: {'Content-Type': 'application/json'},
+            JSON.stringify(order)
+            //data: order
 
         }).success(function (data) {
             console.log(data);
