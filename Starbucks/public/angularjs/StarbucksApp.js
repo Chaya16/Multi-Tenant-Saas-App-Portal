@@ -109,10 +109,10 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
 
         $http({
             method: 'POST',
+
             url: 'http://localhost:3005/starbucks/store1/order', //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order',//link + '/store1/starbucks/order',
             data: order_json,
             headers:  {'Content-Type': 'application/json'}
-
 
         }).success(function (data) {
             console.log(data);
