@@ -56,10 +56,10 @@ StarbucksApp.config(function($routeProvider) {
             controller  : 'payorderController'
         })
 
-      /*  .when('/listOrders',{
-            templateUrl : 'templates/orderList.html',
-            controller  : 'paginationCtrl'
-        })*/
+        /*  .when('/listOrders',{
+         templateUrl : 'templates/orderList.html',
+         controller  : 'paginationCtrl'
+         })*/
 
         .otherwise({redirectTo: '/'});
 });
@@ -80,7 +80,7 @@ StarbucksApp.controller('orderlistController', function($scope) {
 
 //--------------------------------- place order controller-------------------------------------------
 StarbucksApp.controller("placeorderController", function ($scope, $http, $route, $rootScope,
-                                                                  $interval) {
+                                                          $interval) {
     $scope.msg = 'Placing an order';
     console.log("Heyo!!!!");
 
@@ -91,7 +91,7 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
         console.log("placeorder called");
 
         console.log("inside placeordeCtrl");
-        
+
         var storeLocation = '';
         switch ($scope.location)
         {
@@ -105,8 +105,9 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
                 storeLocation = 'Starbucks3';
                 break;
         }
-        var link = 'http://54.67.93.48:8000/'+storeLocation+'/order';
-        
+        //http://:8000/Starbucks1/orders
+        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order';
+
         var order = {
             "location": "store-1",
             "items": [
@@ -126,9 +127,9 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
         $http({
             method: 'POST',
 
-            url: 'http://localhost:3005/starbucks/store1/order', //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order',//link + '/store1/starbucks/order',
+            url: link, //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order',//link + '/store1/starbucks/order',
             data: order_json,
-            headers:  {'Content-Type': 'application/json'}
+            headers:  {'Content-Type': 'application/x-www-form-urlencoded'}
 
         }).success(function (data) {
             console.log(data);
@@ -149,21 +150,34 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
 
 //--------------------------------- check status controller-------------------------------------------
 StarbucksApp.controller("checkstatusController", function ($scope, $http, $route, $rootScope,
-                                                          $interval) {
+                                                           $interval) {
 
     console.log('check status controller');
     console.log($scope.orderId);
 
 
     $scope.checkStatus = function () {
-
-        var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
-            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        var storeLocation = '';
+        switch ($scope.location)
+        {
+            case "Starbucks :  Santana Row":
+                storeLocation = 'Starbucks1';
+                break;
+            case "Starbucks :  San Jose Market Center":
+                storeLocation = 'Starbucks2';
+                break;
+            case "Starbucks :  Westfield Valley Fair":
+                storeLocation = 'Starbucks3';
+                break;
+        }
+        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order/'+$scope.orderId;
+        //var urlLink = 'http://localhost:3005/starbucks/store1/order/';
+        //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
         //link + '/store1/starbucks/order/' +$scope.orderId;
 
         $http({
             method: 'GET',
-            url: urlLink,
+            url: link,
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
             console.log(data);
@@ -174,13 +188,13 @@ StarbucksApp.controller("checkstatusController", function ($scope, $http, $route
             console.log(error);
             $scope.msg = error.message;
             //$scope.msg_flag = true;
-           // $route.reload();
+            // $route.reload();
         });
 
 
 
     }//end of checkstatus
-                                                          });
+});
 
 
 
@@ -194,7 +208,6 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
 
     $scope.getOrder = function () {
-
         var urlLink = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
         //link + '/store1/starbucks/order/' + $scope.orderid;
 
@@ -204,8 +217,8 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
             console.log(data);
-           // var newDataJSON = JSON.parse(data)
-           // console.log(newDataJSON);
+            // var newDataJSON = JSON.parse(data)
+            // console.log(newDataJSON);
             $scope.orderstatus = data.status;
             $scope.drink = data.items.name;
             $scope.size = data.items.size;
@@ -228,9 +241,26 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
 
     $scope.updateOrder = function(){
-        var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;;
-            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
-            //link + '/store1/starbucks/order/' + $scope.orderid;
+
+        var storeLocation = '';
+        switch ($scope.location)
+        {
+            case "Starbucks :  Santana Row":
+                storeLocation = 'Starbucks1';
+                break;
+            case "Starbucks :  San Jose Market Center":
+                storeLocation = 'Starbucks2';
+                break;
+            case "Starbucks :  Westfield Valley Fair":
+                storeLocation = 'Starbucks3';
+                break;
+        }
+
+        var link = ''
+        link = 'http://54.193.9.204:8000/'+storeLocation+'/order/'+$scope.orderId;
+        //var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;;
+        //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        //link + '/store1/starbucks/order/' + $scope.orderid;
         var order = {
             "location": $scope.location,
             "items": [{
@@ -247,7 +277,7 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
         $http({
             method: 'PUT',
-            url: urlLink,
+            url: link,
             headers: {'Content-Type': 'application/json'},
             data: order_json
 
@@ -266,7 +296,7 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
     }
 
-    });
+});
 
 
 
@@ -280,21 +310,35 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
 
     $scope.cancelOrder = function () {
 
-        var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
-            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
-            //link + '/store1/starbucks/order/' + $scope.orderid;
+        var storeLocation = '';
+        switch ($scope.location)
+        {
+            case "Starbucks :  Santana Row":
+                storeLocation = 'Starbucks1';
+                break;
+            case "Starbucks :  San Jose Market Center":
+                storeLocation = 'Starbucks2';
+                break;
+            case "Starbucks :  Westfield Valley Fair":
+                storeLocation = 'Starbucks3';
+                break;
+        }
+        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order'+$scope.orderId;
+        //var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
+        //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        //link + '/store1/starbucks/order/' + $scope.orderid;
 
         $http({
 
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             method: 'DELETE',
-            url: urlLink
+            url: link
         }).success(function (data) {
             console.log("delete completed")
             $scope.orderstatus = data.status;
             $scope.msg = data.message;
             console.log(data);
-           // setTimeout($route.reload(), 1000);
+            // setTimeout($route.reload(), 1000);
         }).error(function (error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
@@ -307,19 +351,33 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
 
 //--------------------------------- pay order controller-------------------------------------------
 StarbucksApp.controller("payorderController", function ($scope, $http, $route, $rootScope,
-                                                           $interval) {
+                                                        $interval) {
 
     console.log('pay order controller');
 
     $scope.payOrder = function () {
 
-        var urlLink ='http://localhost:3005/starbucks/store1/order/'+$scope.orderId +"/pay";
-            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId +"/pay";
-            //link + '/store1/starbucks/order/' + $scope.orderid + '/pay';
+        var storeLocation = '';
+        switch ($scope.location)
+        {
+            case "Starbucks :  Santana Row":
+                storeLocation = 'Starbucks1';
+                break;
+            case "Starbucks :  San Jose Market Center":
+                storeLocation = 'Starbucks2';
+                break;
+            case "Starbucks :  Westfield Valley Fair":
+                storeLocation = 'Starbucks3';
+                break;
+        }
+        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order'+$scope.orderId +"/pay";
+        //var urlLink ='http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
+        //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId +"/pay";
+        //link + '/store1/starbucks/order/' + $scope.orderid + '/pay';
 
         $http({
             method: 'POST',
-            url: urlLink
+            url: link
         }).success(function (data) {
             console.log(data);
             $scope.orderstatus = data.status;
@@ -329,7 +387,7 @@ StarbucksApp.controller("payorderController", function ($scope, $http, $route, $
         }).error(function (error, status) {
             $scope.msg = error.message;
             //$scope.msg_flag = true;
-           // $route.reload();
+            // $route.reload();
         });
     }
 
