@@ -317,22 +317,22 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
                 storeLocation = 'Starbucks1';
                 break;
             case "Starbucks :  San Jose Market Center":
-                storeLocation = 'Starbucks2';
+                storeLocation = 'https://shielded-forest-84936.herokuapp.com/starbucks/store1/order/'+$scope.orderId;
                 break;
             case "Starbucks :  Westfield Valley Fair":
                 storeLocation = 'Starbucks3';
                 break;
         }
-        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order/'+$scope.orderId;
+        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order/s'+$scope.orderId;
         //var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
         //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
         //link + '/store1/starbucks/order/' + $scope.orderid;
 
         $http({
 
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            headers: {'Content-Type': 'application/json'},
             method: 'DELETE',
-            url: link
+            url: storeLocation
         }).success(function (data) {
             console.log("delete completed")
             $scope.orderstatus = data.status;
