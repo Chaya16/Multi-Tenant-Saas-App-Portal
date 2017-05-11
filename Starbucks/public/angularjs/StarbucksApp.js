@@ -93,23 +93,26 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
         console.log("inside placeordeCtrl");
         var order = {
             "location": "store-1",
-            "items": [{
-                "qty": $scope.qty,
-                "name": $scope.drink,
-                "milk": $scope.milk,
-                "size": $scope.size
-            }]
-        }
+            "items": [
+                {
+                    "qty": $scope.qty,
+                    "name": $scope.drink,
+                    "milk": $scope.milk,
+                    "size": $scope.size
+                }
+            ]
+        };
 
-
-
-        console.log(order);
+        var order_str = JSON.stringify(order); // json gets the string "2016-08-26 etc..."
+        var order_json = JSON.parse(order_str);
+        console.log(order_json);
 
         $http({
             method: 'POST',
-            url: 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order',//link + '/store1/starbucks/order',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            data: order
+            url: 'http://localhost:3005/starbucks/store1/order', //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order',//link + '/store1/starbucks/order',
+            data: order_json,
+            headers:  {'Content-Type': 'application/json'}
+
 
         }).success(function (data) {
             console.log(data);
@@ -138,7 +141,8 @@ StarbucksApp.controller("checkstatusController", function ($scope, $http, $route
 
     $scope.checkStatus = function () {
 
-        var urlLink = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
+            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
         //link + '/store1/starbucks/order/' +$scope.orderId;
 
         $http({
@@ -208,7 +212,8 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
 
     $scope.updateOrder = function(){
-        var urlLink = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;;
+            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
             //link + '/store1/starbucks/order/' + $scope.orderid;
         var order = {
             "location": $scope.location,
@@ -220,13 +225,15 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
             }]
         }
 
-        console.log(order);
+        var order_str = JSON.stringify(order); // json gets the string "2016-08-26 etc..."
+        var order_json = JSON.parse(order_str);
+        console.log(order_json);
 
         $http({
             method: 'PUT',
             url: urlLink,
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            data: order
+            headers: {'Content-Type': 'application/json'},
+            data: order_json
 
         }).success(function (data) {
             $scope.msg = data.message;
@@ -257,7 +264,8 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
 
     $scope.cancelOrder = function () {
 
-        var urlLink ='http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
+        var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
+            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
             //link + '/store1/starbucks/order/' + $scope.orderid;
 
         $http({
@@ -289,7 +297,8 @@ StarbucksApp.controller("payorderController", function ($scope, $http, $route, $
 
     $scope.payOrder = function () {
 
-        var urlLink ='http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId +"/pay";
+        var urlLink ='http://localhost:3005/starbucks/store1/order/'+$scope.orderId +"/pay";
+            //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId +"/pay";
             //link + '/store1/starbucks/order/' + $scope.orderid + '/pay';
 
         $http({
