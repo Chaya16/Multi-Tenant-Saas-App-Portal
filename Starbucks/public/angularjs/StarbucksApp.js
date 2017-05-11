@@ -246,13 +246,13 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
         switch ($scope.location)
         {
             case "Starbucks :  Santana Row":
-                storeLocation = 'Starbucks1';
+                storeLocation = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
                 break;
             case "Starbucks :  San Jose Market Center":
-                storeLocation = 'Starbucks2';
+                storeLocation = 'https://shielded-forest-84936.herokuapp.com/starbucks/store1/order/'+$scope.orderId;
                 break;
             case "Starbucks :  Westfield Valley Fair":
-                storeLocation = 'Starbucks3';
+                storeLocation = 'http://starbucksapp.herokuapp.com/v1/starbucks/store3/order/'+$scope.orderId;
                 break;
         }
 
@@ -277,7 +277,7 @@ StarbucksApp.controller("updateorderController", function ($scope, $http, $route
 
         $http({
             method: 'PUT',
-            url: link,
+            url: storeLocation,
             headers: {'Content-Type': 'application/json'},
             data: order_json
 
@@ -314,13 +314,13 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
         switch ($scope.location)
         {
             case "Starbucks :  Santana Row":
-                storeLocation = 'Starbucks1';
+                storeLocation = 'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
                 break;
             case "Starbucks :  San Jose Market Center":
                 storeLocation = 'https://shielded-forest-84936.herokuapp.com/starbucks/store1/order/'+$scope.orderId;
                 break;
             case "Starbucks :  Westfield Valley Fair":
-                storeLocation = 'Starbucks3';
+                storeLocation = 'http://starbucksapp.herokuapp.com/v1/starbucks/store3/order/'+$scope.orderId;
                 break;
         }
         var link = 'http://54.193.9.204:8000/'+storeLocation+'/order/s'+$scope.orderId;
