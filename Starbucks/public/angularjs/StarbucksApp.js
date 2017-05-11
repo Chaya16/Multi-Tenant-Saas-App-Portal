@@ -323,7 +323,7 @@ StarbucksApp.controller("cancelorderController", function ($scope, $http, $route
                 storeLocation = 'Starbucks3';
                 break;
         }
-        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order'+$scope.orderId;
+        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order/'+$scope.orderId;
         //var urlLink = 'http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
         //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId;
         //link + '/store1/starbucks/order/' + $scope.orderid;
@@ -370,7 +370,7 @@ StarbucksApp.controller("payorderController", function ($scope, $http, $route, $
                 storeLocation = 'Starbucks3';
                 break;
         }
-        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order'+$scope.orderId +"/pay";
+        var link = 'http://54.193.9.204:8000/'+storeLocation+'/order/'+$scope.orderId +"/pay";
         //var urlLink ='http://localhost:3005/starbucks/store1/order/'+$scope.orderId;
         //'http://starbucks-python-mongo-backend-dev.us-west-1.elasticbeanstalk.com/v1/starbucks/store2/order/'+$scope.orderId +"/pay";
         //link + '/store1/starbucks/order/' + $scope.orderid + '/pay';
