@@ -91,6 +91,22 @@ StarbucksApp.controller("placeorderController", function ($scope, $http, $route,
         console.log("placeorder called");
 
         console.log("inside placeordeCtrl");
+        
+        var storeLocation = '';
+        switch ($scope.location)
+        {
+            case "Starbucks :  Santana Row":
+                storeLocation = 'Starbucks1';
+                break;
+            case "Starbucks :  San Jose Market Center":
+                storeLocation = 'Starbucks2';
+                break;
+            case "Starbucks :  Westfield Valley Fair":
+                storeLocation = 'Starbucks3';
+                break;
+        }
+        var link = 'http://54.67.93.48:8000/'+storeLocation+'/order';
+        
         var order = {
             "location": "store-1",
             "items": [
