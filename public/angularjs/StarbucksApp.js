@@ -5,12 +5,16 @@
 var StarbucksApp = angular.module('StarbucksApp', ['ngRoute', 'ngTable'/*, 'smart-table'*/]);
 
 // configure our routes
-StarbucksApp.config(function($routeProvider) {
+StarbucksApp.config(function($routeProvider,$locationProvider) {
 
     var link = 'http://54.183.83.252:8000/Starbucks2';
 
     console.log("route provider");
-
+    
+    $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+    });
     $routeProvider
     // route for the home page
         .when('/', {
